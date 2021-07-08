@@ -1,25 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <exercise xmlns="https://spatext.clontz.org" version="0.0">
   <statement>
-      <p>Consider the following statement.</p>
-        <ul><li> The set of vectors <m>{{vecset}}</m> 
+      <p>Consider the following claim.</p>
+        <ul><li><p>The set of vectors <m>{{vecset}}</m> 
             {{#prompt}}
                 spans
             {{/prompt}}
             {{^prompt}}
                 does not span
             {{/prompt}}
-            <m>\mathbb{R}^4</m>.
+            <m>\mathbb{R}^4</m>.</p>
         </li></ul>
     <ol>
-        <li> Write an equivalent statement using a vector equation.</li>
-        <li> Explain why your statement is true or false.</li>
+        <li><p>Write a statement involving a vector equation that's equivalent to this claim.</p></li>
+        <li><p>Explain why the claim is true or false.</p></li>
     </ol>
   </statement>
   <answer>
-     <p><me>\operatorname{RREF}{{matrix}}={{rref}}</me></p>
      <ol>
          <li>
+             <p>
              The vector equation <m>{{vecComb}}=\vec{v}</m> 
              {{#prompt}}
                  has a solution for every
@@ -28,17 +28,30 @@
                  is inconsistent for some
              {{/prompt}}
              vector <m>\vec{v}</m> in <m>\mathbb{R}^4</m>.
+             </p>
          </li>
          <li>
-            The set of vectors <m>{{vecset}}</m>
-            {{#prompt}}
-                spans
-            {{/prompt}}
-            {{^prompt}}
-                does not span
-            {{/prompt}}
-            <m>\mathbb{R}^4</m>.
+             <p>
+                 The claim is
+            {{#spans}}
+              {{#prompt}}
+                 true.
+              {{/prompt}}
+              {{^prompt}}
+                 false.
+              {{/prompt}}
+            {{/spans}}
+            {{^spans}}
+              {{#prompt}}
+                 false.
+              {{/prompt}}
+              {{^prompt}}
+                 true.
+              {{/prompt}}
+            {{/spans}}
+             </p>
          </li>
        </ol>
+     <me>\operatorname{RREF}{{matrix}}={{rref}}</me>
   </answer>
 </exercise>
